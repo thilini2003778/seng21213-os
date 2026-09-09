@@ -1,5 +1,5 @@
 # =============================================================================
-# SENG21213-OS :: Makefile
+# SENG21213-OS :: Makefile (Stage 2 - Threads, Mutex, Semaphores)
 # =============================================================================
 
 AS       := nasm
@@ -14,11 +14,14 @@ BOOT_SRC := boot/boot.asm
 BOOT_BIN := boot/boot.bin
 
 ASM_OBJS := build/kernel_entry.o build/switch.o
-C_SRCS   := kernel/kernel.c \
-            kernel/vga.c    \
-            kernel/keyboard.c \
-            kernel/process.c  \
-            kernel/scheduler.c
+C_SRCS   := kernel/kernel.c    \
+            kernel/vga.c       \
+            kernel/keyboard.c  \
+            kernel/process.c   \
+            kernel/scheduler.c \
+            kernel/thread.c    \
+            kernel/mutex.c     \
+            kernel/semaphore.c
 C_OBJS   := $(patsubst kernel/%.c, build/%.o, $(C_SRCS))
 
 KERNEL_ELF := build/kernel.elf
