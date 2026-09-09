@@ -1,5 +1,5 @@
 # =============================================================================
-# SENG21213-OS :: Makefile (Stage 3 - Physical Memory Manager)
+# SENG21213-OS :: Makefile (Stage 4 - Complete OS with File System)
 # =============================================================================
 
 AS       := nasm
@@ -22,7 +22,9 @@ C_SRCS   := kernel/kernel.c    \
             kernel/thread.c    \
             kernel/mutex.c     \
             kernel/semaphore.c \
-            kernel/pmm.c
+            kernel/pmm.c       \
+            kernel/ramdisk.c   \
+            kernel/fs.c
 C_OBJS   := $(patsubst kernel/%.c, build/%.o, $(C_SRCS))
 
 KERNEL_ELF := build/kernel.elf
